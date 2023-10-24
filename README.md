@@ -1,5 +1,17 @@
 # numediart-flutter-2023
 
+## Flutter
+
+Flutter est un framework qui permet de développer des applications mobiles (Android & iOS) à partir d'un même code, d'un même projet. Au fil des années, l'équipe de développement à ajouter la capacité de créer des applications web et desktop (macOS, Linux & Windows).
+
+Flutter nous permet donc, à partir d'un même projet, de builder 6 applications pour chaque OS. Par le passé, une application native devait être développée pour chaque plateforme, soit 6 projets différents avec chacun son équipe de développement. Flutter par son aspect hybride permet un gain de temps et d'argent.
+
+Pourquoi une application native ne peut pas tourner sur les autres plateformes et une application hybride le peut ? Car chaque OS présente ses spécificités, sa manière de gérer ses applications, sa manière de les exécuter. Flutter gère ces spécificités pour nous. Il est toutefois possible d'ajouter des fonctionnalités ou modifier un visuel selon la plateforme (différence de UI entre web et mobile, Android et iOS...), l'important est que la logique n'a pas à être réécrite dans différents languages. De plus, même si les visuels changent selon les plateformes, il est facile aux développeurs de les modifier car le language est le même.
+
+### Installation
+
+Avant de développer sur Flutter, il doit être téléchargé et installé. La [documentation](https://docs.flutter.dev/get-started/install) explique les étapes à réaliser selon votre système d'exploitation.
+
 ## Dart
 
 ### Pour débuter
