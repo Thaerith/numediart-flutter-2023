@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:hello_creactifs/app/sign_up.dart';
+import 'package:hello_creactifs/app/sign_in.dart';
 
 class HelloCreactifsApp extends StatelessWidget {
   const HelloCreactifsApp({super.key});
@@ -11,7 +11,7 @@ class HelloCreactifsApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const SignUpScreen(),
+      home: const SignInScreen(),
     );
   }
 }
