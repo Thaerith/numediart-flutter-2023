@@ -1,5 +1,9 @@
 # numediart-flutter-2023
 
+## Table des matières
+
+- [S'authentifier avec Firebase](./firebase.md)
+
 ## Flutter
 
 Flutter est un framework qui permet de développer des applications mobiles (Android & iOS) à partir d'un même code, d'un même projet. Au fil des années, l'équipe de développement à ajouter la capacité de créer des applications web et desktop (macOS, Linux & Windows).
