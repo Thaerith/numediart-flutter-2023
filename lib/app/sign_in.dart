@@ -1,5 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:hello_creactifs/app/sign_up.dart';
 
 class SignInScreen extends StatefulWidget {
@@ -75,7 +76,7 @@ class _SignInScreenState extends State<SignInScreen> {
             const Spacer(flex: 2),
             TextButton(
               onPressed: () {
-                Navigator.of(context).pushNamed('/sign-up');
+                GoRouter.of(context).pushNamed('sign-up');
               },
               child: const Text('Pas encore de compte ?'),
             ),

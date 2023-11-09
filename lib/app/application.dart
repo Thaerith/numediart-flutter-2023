@@ -1,5 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:hello_creactifs/app/navigation.dart';
 import 'package:hello_creactifs/app/sign_in.dart';
 import 'package:hello_creactifs/app/sign_up.dart';
 
@@ -13,16 +14,12 @@ class HelloCreactifsApp extends StatefulWidget {
 class _HelloCreactifsAppState extends State<HelloCreactifsApp> {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return MaterialApp.router(
       title: 'Hello Creactifs',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      initialRoute: '/sign-in',
-      routes: {
-        '/sign-in': (context) => const SignInScreen(),
-        '/sign-up': (context) => const SignUpScreen(),
-      },
+      routerConfig: router,
     );
   }
 }
