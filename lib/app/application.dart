@@ -1,6 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:hello_creactifs/app/sign_in.dart';
+import 'package:hello_creactifs/app/sign_up.dart';
 
 class HelloCreactifsApp extends StatefulWidget {
   const HelloCreactifsApp({super.key});
@@ -12,25 +13,16 @@ class HelloCreactifsApp extends StatefulWidget {
 class _HelloCreactifsAppState extends State<HelloCreactifsApp> {
   @override
   Widget build(BuildContext context) {
-    return StreamBuilder(
-        stream: FirebaseAuth.instance.authStateChanges(),
-        builder: (context, snapshot) {
-          print(snapshot);
-          return MaterialApp(
-            title: 'Hello Creactifs',
-            theme: ThemeData(
-              primarySwatch: Colors.blue,
-            ),
-            home: const SignInScreen(),
-          );
-        });
-  }
-
-  @override
-  void initState() {
-    super.initState();
-    FirebaseAuth.instance.authStateChanges().listen((user) {
-      print(user);
-    });
+    return MaterialApp(
+      title: 'Hello Creactifs',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+      ),
+      initialRoute: '/sign-in',
+      routes: {
+        '/sign-in': (context) => const SignInScreen(),
+        '/sign-up': (context) => const SignUpScreen(),
+      },
+    );
   }
 }

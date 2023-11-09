@@ -75,11 +75,7 @@ class _SignInScreenState extends State<SignInScreen> {
             const Spacer(flex: 2),
             TextButton(
               onPressed: () {
-                Navigator.of(context).push<void>(
-                  MaterialPageRoute(
-                    builder: (context) => const SignUpScreen(),
-                  ),
-                );
+                Navigator.of(context).pushNamed('/sign-up');
               },
               child: const Text('Pas encore de compte ?'),
             ),
