@@ -6,7 +6,8 @@
 
 ## Liens utiles
 
-- https://firebase.google.com/docs/flutter/setup?platform=ios
+- https://firebase.google.com/docs/flutter/setup
+- https://pub.dev/packages/firebase_auth
 
 
 ## Flutter
