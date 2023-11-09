@@ -1,7 +1,34 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
-class SignUpScreen extends StatelessWidget {
+class SignUpScreen extends StatefulWidget {
   const SignUpScreen({super.key});
+
+  @override
+  State<SignUpScreen> createState() => _SignUpScreenState();
+}
+
+class _SignUpScreenState extends State<SignUpScreen> {
+  String _email = '';
+  String _password = '';
+  bool _loading = false;
+
+  _onSignUpPressed() async {
+    setState(() {
+      _loading = true;
+    });
+
+    try {
+      FirebaseAuth.instance
+          .createUserWithEmailAndPassword(email: _email, password: _password);
+    } catch (t) {
+      print(t);
+    }
+
+    setState(() {
+      _loading = false;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -25,35 +52,29 @@ class SignUpScreen extends StatelessWidget {
                         labelText: 'Nom',
                       ),
                     ),
-                    const TextField(
-                      decoration: InputDecoration(
+                    TextField(
+                      decoration: const InputDecoration(
                         labelText: 'Email',
                       ),
                       keyboardType: TextInputType.emailAddress,
+                      onChanged: (value) => setState(() => _email = value),
                     ),
-                    const TextField(
-                      decoration: InputDecoration(
+                    TextField(
+                      decoration: const InputDecoration(
                         labelText: 'Password',
                       ),
                       keyboardType: TextInputType.visiblePassword,
                       obscureText: true,
                       autocorrect: false,
-                    ),
-                    const TextField(
-                      decoration: InputDecoration(
-                        labelText: 'Confirm Password',
-                      ),
-                      keyboardType: TextInputType.visiblePassword,
-                      obscureText: true,
-                      autocorrect: false,
+                      onChanged: (value) => setState(() => _password = value),
                     ),
                     Container(height: 32),
-                    const SizedBox(
+                    SizedBox(
                       width: double.infinity,
                       height: 40,
                       child: ElevatedButton(
-                        onPressed: null,
-                        child: Text('Sign Up'),
+                        onPressed: _loading ? null : _onSignUpPressed,
+                        child: const Text('Sign Up'),
                       ),
                     ),
                   ],
