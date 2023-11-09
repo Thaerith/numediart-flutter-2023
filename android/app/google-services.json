@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1000677623267",
+    "project_id": "hello-creactifs",
+    "storage_bucket": "hello-creactifs.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1000677623267:android:028f0580b5d627e23b4cd6",
+        "android_client_info": {
+          "package_name": "org.numediart.hello_creactifs"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCrNk0-f2kTtPvCjhesTgbpqkot8_uqcTo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
