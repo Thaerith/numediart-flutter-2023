@@ -1,10 +1,10 @@
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:hello_creactifs/app/sign_up.dart';
 
 class SignInScreen extends StatefulWidget {
-  const SignInScreen({super.key});
+  final VoidCallback onSignInPressed;
+
+  const SignInScreen({super.key, required this.onSignInPressed});
 
   @override
   State<SignInScreen> createState() => _SignInScreenState();
@@ -14,18 +14,6 @@ class _SignInScreenState extends State<SignInScreen> {
   String _email = '';
   String _password = '';
   bool _loading = false;
-
-  void _onSignInPressed() async {
-    setState(() => _loading = true);
-    try {
-      await Future.delayed(const Duration(seconds: 3));
-      await FirebaseAuth.instance
-          .signInWithEmailAndPassword(email: _email, password: _password);
-    } catch (t) {
-      print(t);
-    }
-    setState(() => _loading = false);
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -65,7 +53,7 @@ class _SignInScreenState extends State<SignInScreen> {
                       width: double.infinity,
                       height: 40,
                       child: ElevatedButton(
-                        onPressed: _loading ? null : _onSignInPressed,
+                        onPressed: _loading ? null : widget.onSignInPressed,
                         child: const Text('Sign In'),
                       ),
                     ),
